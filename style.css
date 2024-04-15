@@ -1,0 +1,338 @@
+:root{
+ touch-action: pan-x pan-y;
+ height:100%;
+}
+@font-face {
+  font-family: "DMSans";
+  src: url("DMSans.ttf") format("opentype")
+}
+
+@font-face {
+  font-family: "DMSans-Italic";
+  src: url("DMSans-Italic.ttf") format("opentype")
+}
+
+* {
+  font-family: "DMSans";
+  box-sizing: border-box;
+
+}
+
+body {
+  background-image: url("fond.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  touch-action: none;
+  overflow: hidden;
+
+}
+
+
+#retour {
+  display: none;
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  left: 40px;
+  top: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+#black {
+  background-color: black;
+  opacity: 0.8;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none
+}
+
+.joueur {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#joueur1 {
+  top: calc(50vh - 125px);
+  left: 150px;
+  rotate: 90deg
+}
+
+#joueur2 {
+  bottom: 50px;
+  left: calc(33vw - 125px);
+}
+
+#joueur3 {
+  bottom: 50px;
+  right: calc(33vw - 125px);
+}
+
+#joueur4 {
+  top: calc(50vh - 125px);
+  right: 150px;
+  rotate: -90deg;
+}
+
+.capt {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+#capt1 {
+  rotate: -90deg;
+}
+
+#capt2 {
+  rotate: -90deg;
+}
+
+#capt3 {
+  rotate: -90deg;
+}
+
+#capt4 {
+  rotate: -90deg;
+}
+
+.angle-info {
+  color: white;
+  font-size: 3em;
+  font-weight: bold;
+  z-index: 10;
+  display: none;
+
+}
+.place {
+  position:absolute;
+  width:100px;
+  height:100px;
+  top:75px;
+  left:75px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: all ease-in-out 1000ms;
+
+}
+.place.size{
+  width:150px;
+  height:150px;
+  top:50px;
+  left:50px;
+}
+.place.ok{
+  width:250px !important;
+  height:250px !important;
+  top:0px !important;
+  left:0px !important;
+}
+.percent {
+  display: none;
+}
+
+.circle-svg {
+  display: block;
+  margin: 10px auto;
+  max-height: 200px;
+}
+
+.circle-svg path.percent {
+  stroke: white;
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+}
+
+#allscenarios {
+  display: none;
+}
+.background{
+  border-radius: 50%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.678);
+}
+.scenario {
+  border-radius: 50%;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  border: solid white 4px;
+}
+#background1{
+  top: 40px;
+  left: 370px;
+  width: 300px;
+  height: 300px;
+}
+#scenario1 {
+  top: 120px;
+  left: 450px;
+  width: 140px;
+  height: 140px;
+}
+
+#background2 {
+  top: 20px;
+  left: 1120px;
+  width: 300px;
+  height: 300px;
+}
+
+#scenario2 {
+  top: 100px;
+  left: 1200px;
+  width: 140px;
+  height: 140px;
+}
+
+#background3 {
+  top: 270px;
+  left: 720px;
+  width: 300px;
+  height: 300px;
+}
+
+#scenario3 {
+  top: 350px;
+  left: 800px;
+  width: 140px;
+  height: 140px;
+}
+
+.titreScenario {
+  position: absolute;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  width: 200px;
+  text-align: center;
+}
+
+#titreScenario1 {
+  top: 280px;
+  left: 420px;
+}
+
+#titreScenario2 {
+  top: 260px;
+  left: 1170px;
+}
+
+#titreScenario3 {
+  top: 510px;
+  left: 770px;
+}
+
+#allsituations {
+  display: none;
+  position:absolute;
+  top:100px;
+  width:1200px;
+  height:400px;
+  left:calc(50vw - 600px);
+  justify-content: center;
+  gap:40px;
+}
+.aroundSituation{
+  position:relative;
+  border-radius: 0 38% 0 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  width:250px;
+  height:280px;
+}
+.situation {
+  border-radius:50%;
+  background-size: cover;
+  background-position: center;
+  position:absolute;
+  width:150px;
+  height:150px;
+  left:70px;
+  top:20px;
+  border:white solid 4px
+  
+  
+}
+.titreSituation {
+  position:absolute;
+  width:200px;
+  left:25px;
+  bottom:25px;
+  font-size:1.2em;
+  color:white;
+  font-weight: bold;
+  
+}
+
+
+
+#choixDisplay {
+  position: absolute;
+  left: 0;
+  top: 80px;
+  width: 100vw;
+  display: none;
+  justify-content: center;
+  gap: 40px;
+}
+
+.choix {
+  width: 140px;
+  height: 140px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  opacity: 0.5;
+  color:white;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+#vision {
+  position: absolute;
+  background-image: url("vision.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 600px;
+  height: 400px;
+  left: calc(50vw - 300px);
+  top: calc(50vh - 200px);
+}
+
+#legende{
+  position:absolute;
+  top: 80px;
+  left: 1300px;
+  width: 360px;
+  background-color: rgba(0, 0, 0, 0.678);
+  color:white;
+  border-radius: 20px;
+  display:none;
+  padding:20px;
+}
+
+h1{
+  font-size: 1em;
+}
+li{
+  font-size:0.8em;
+  margin-bottom:10px;
+}
